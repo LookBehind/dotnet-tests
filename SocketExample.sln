@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketExample", "SocketExample\SocketExample.csproj", "{490E7971-F4F0-4695-8839-41EA4A0AA0EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetExample", "AspNetExample\AspNetExample.csproj", "{80FFA7C9-AACE-49F1-8FE3-F7DA4C42308E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{490E7971-F4F0-4695-8839-41EA4A0AA0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490E7971-F4F0-4695-8839-41EA4A0AA0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490E7971-F4F0-4695-8839-41EA4A0AA0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490E7971-F4F0-4695-8839-41EA4A0AA0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80FFA7C9-AACE-49F1-8FE3-F7DA4C42308E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FFA7C9-AACE-49F1-8FE3-F7DA4C42308E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FFA7C9-AACE-49F1-8FE3-F7DA4C42308E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FFA7C9-AACE-49F1-8FE3-F7DA4C42308E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
