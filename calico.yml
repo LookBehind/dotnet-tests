@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calico-router
+  labels:
+    app: calico-router
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calico-router
+  template:
+    metadata:
+      labels:
+        app: calico-router
+    spec:
+      containers:
+      - name: calico-router
+        imagePullPolicy: Always
+        image: "ghcr.io/tailscale/tailscale:latest"
+        env:
+        # Store the state in a k8s secret
+        - name: TS_KUBE_SECRET
+          value: "calico-system"
+        - name: TS_USERSPACE
+          value: "false"
+        - name: TS_DEBUG_FIREWALL_MODE
+          value: auto
+        - name: TS_AUTHKEY
+          valueFrom:
+            secretKeyRef:
+              name: calico-router
+              key: TS_AUTHKEY
+              optional: true
+        - name: TS_ROUTES
+          value: "10.22.0.0/16"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_UID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        securityContext:
+          privileged: true
