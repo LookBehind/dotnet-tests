@@ -83,7 +83,7 @@ spec:
         - name: TS_AUTHKEY
           valueFrom:
             secretKeyRef:
-              name: calico-router
+              name: calico-system
               key: TS_AUTHKEY
               optional: true
         - name: TS_ROUTES
