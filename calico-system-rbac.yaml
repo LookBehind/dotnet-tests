@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: calico-system
+  namespace: calico-system
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: calico-system-secret
+  annotations:
+    kubernetes.io/service-account.name: calico-system
+type: kubernetes.io/service-account-token
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: calico-system
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- nonResourceURLs:
+  - '*'
+  verbs:
+  - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: calico-system-binding
+subjects:
+  - kind: ServiceAccount
+    name: calico-system
+    namespace: calico-system
+roleRef:
+  kind: ClusterRole
+  name: calico-system
+  apiGroup: rbac.authorization.k8s.io
