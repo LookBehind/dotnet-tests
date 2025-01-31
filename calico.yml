@@ -78,7 +78,7 @@ spec:
               key: TS_AUTHKEY
               optional: true
         - name: TS_ROUTES
-          value: "10.22.0.0/16"
+          value: "10.18.0.0/16"
         - name: POD_NAME
           valueFrom:
             fieldRef:
