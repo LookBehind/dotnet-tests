@@ -8,6 +8,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: calico-system-secret
+  namespace: calico-system
   annotations:
     kubernetes.io/service-account.name: calico-system
 type: kubernetes.io/service-account-token
@@ -46,6 +47,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: calico-router
+  namespace: calico-system
   labels:
     app: calico-router
 spec:
